@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login page</title>
+</head>
+<body>
+<p>session data: {{ session_data }}</p>
+<p>request method: {{ request_method }}</p>
+<form action="/login" method="post">
+  <label for="name">First name:</label>
+  <input type="text" id="name" name="name"><br><br>
+  <input type="submit" value="Submit">
+</form>
+<br>
+<a href="/">Go to main</a>
+</body>
+</html>
