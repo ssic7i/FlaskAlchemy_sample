@@ -3,6 +3,7 @@ import uuid
 
 from flask import Flask, render_template, request, session
 from flask_session import Session
+from flask_migrate import Migrate
 from models import db
 import views
 
@@ -25,6 +26,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///test.db'
 app.config["SESSION_PERMANENT"] = False
 app.config["SESSION_TYPE"] = "filesystem"
 db.init_app(app)
+migrate = Migrate(app, db, render_as_batch=True)
 app.secret_key = get_app_secret()
 Session(app)
 
